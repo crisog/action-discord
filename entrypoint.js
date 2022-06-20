@@ -39,7 +39,11 @@ if (argv._.length === 0 && !process.env.DISCORD_EMBEDS) {
   // Otherwise, if the argument or embeds are provided, let Discord override the message.
   const args = argv._.join(' ');
   const message = _.template(args)({ ...process.env, EVENT_PAYLOAD: JSON.parse(eventContent) });
-
+  
+  delete Object.prototype.toJSON;
+  delete Array.prototype.toJSON;
+  delete String.prototype.toJSON;
+  
   let embedsObject;
   if (process.env.DISCORD_EMBEDS) {
      try {
@@ -50,10 +54,6 @@ if (argv._.length === 0 && !process.env.DISCORD_EMBEDS) {
        process.exit(1);
      }
   }
-  
-  delete Object.prototype.toJSON;
-  delete Array.prototype.toJSON;
-  delete String.prototype.toJSON;
   
   url = process.env.DISCORD_WEBHOOK;
   payload = JSON.stringify({
