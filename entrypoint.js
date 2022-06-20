@@ -47,7 +47,7 @@ if (argv._.length === 0 && !process.env.DISCORD_EMBEDS) {
   let embedsObject;
   if (process.env.DISCORD_EMBEDS) {
      try {
-        console.log('Raw Embed:', process.env.DISCORD_EMBED);
+        console.log('Raw Embed:', process.env.DISCORD_EMBEDS);
         embedsObject = JSON.parse(process.env.DISCORD_EMBEDS);
      } catch (parseErr) {
        console.error('Error parsing DISCORD_EMBEDS :' + parseErr);
