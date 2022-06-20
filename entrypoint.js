@@ -51,13 +51,11 @@ if (argv._.length === 0 && !process.env.DISCORD_EMBEDS) {
      }
   }
   
-  if(window.Prototype) {
-    delete Object.prototype.toJSON;
-    delete Array.prototype.toJSON;
-    delete Hash.prototype.toJSON;
-    delete String.prototype.toJSON;
-}
-
+  delete Object.prototype.toJSON;
+  delete Array.prototype.toJSON;
+  delete Hash.prototype.toJSON;
+  delete String.prototype.toJSON;
+  
   url = process.env.DISCORD_WEBHOOK;
   payload = JSON.stringify({
     content: message,
