@@ -48,7 +48,7 @@ if (argv._.length === 0 && !process.env.DISCORD_EMBEDS) {
   if (process.env.DISCORD_EMBEDS) {
      try {
         embedsObject = JSON.parse(process.env.DISCORD_EMBEDS);
-        console.log('Parsed Embed:', embedsObject)
+        console.log('Type of Parsed Embed:', typeof embedsObject)
      } catch (parseErr) {
        console.error('Error parsing DISCORD_EMBEDS :' + parseErr);
        process.exit(1);
