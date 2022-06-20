@@ -64,7 +64,7 @@ if (argv._.length === 0 && !process.env.DISCORD_EMBEDS) {
 // curl -X POST -H "Content-Type: application/json" --data "$(cat $GITHUB_EVENT_PATH)" $DISCORD_WEBHOOK/github
 
 (async () => {
-  console.log('Sending message ...');
+  console.log('Sending message with payload: ', payload);
   await axios.post(
     `${url}?wait=true`,
     payload,
