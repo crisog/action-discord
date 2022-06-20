@@ -53,7 +53,6 @@ if (argv._.length === 0 && !process.env.DISCORD_EMBEDS) {
   
   delete Object.prototype.toJSON;
   delete Array.prototype.toJSON;
-  delete Hash.prototype.toJSON;
   delete String.prototype.toJSON;
   
   url = process.env.DISCORD_WEBHOOK;
